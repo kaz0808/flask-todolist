@@ -7,7 +7,7 @@ def get_db_connection():
     conn = mysql.connector.connect(
         user='flask',
         password='flask',
-        host='3c3dd07cf6f4',
+        host='my-db-host',
         database='flask'
     )
     return conn
