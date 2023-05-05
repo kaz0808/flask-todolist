@@ -46,13 +46,17 @@
         <h2>完了済みリスト</h2>
         <ul>
             {% for complete in completes %}
-            <form action="/delete" method="post">
                 <h3>
                     <li>{{ complete[1] }}</li>
                 </h3>
-                <input type="hidden" name="id" value="{{ complete[0] }}">
-                <input type="submit" value="削除">
-            </form>
+                <form action="/back" method="post">
+                    <input type="hidden" name="id" value="{{ complete[0] }}">
+                    <input type="submit" value="もとに戻す">
+                </form>
+                <form action="/delete" method="post">
+                    <input type="hidden" name="id" value="{{ complete[0] }}">
+                    <input type="submit" value="削除">
+                </form>
             {% endfor %}
         </ul>
     </div>
